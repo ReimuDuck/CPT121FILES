@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <stdlib.h>
+//whenever functions in program must be listed up here
+int main(int argc, char *argv[]) ;
+int my_loop ( void ); //creates the table
+int my_branch (int num1,int num2);//finds bigger of 2 ints
+int my_min ( int num1, int num2); //finds smaller of 2 ints
+void termination ( void ); //ends program
+//____________________________________________________________________________
+int main(int argc, char *argv[]) { // must be main in every C program
+    int n;
+
+    n = my_loop();
+    termination();
+
+    return 0;
+
+}
+//____________________________________________________________________________
+//____________________________________________________________________________
+int my_loop ( void ){
+    int n, o, i, max, j, min;
+    //checks for 2 inputs and uses them to create the table
+    printf("Enter 2 numbers seperated by a space:");
+    scanf("%d %d", &n, &o);
+    max = my_branch(n,o);
+    min = my_min(n,o);
+
+    for ( i = min; i <= max; i++){
+        printf("  ");
+        for ( i = min; i <= max; i++)
+        {
+            printf("%3d", i);
+        }
+        printf("\n");
+        printf("    ");
+        for ( i = min; i <= max; i++)
+        {
+            printf("-- ");
+        }
+        printf("\n");
+
+        for ( j = min; j <= max; j++)
+        {
+            printf("%d |", j);
+            for ( i = min; i <= max; i++)
+            {
+                printf("%3d", j*i);
+            }
+
+            printf("\n");
+        }
+        printf("\n");
+    }
+
+    return (n);
+}
+//____________________________________________________________________________
+int my_branch ( int num1, int num2){
+    if (num1 > num2){
+        return num1;
+    }else {
+        return num2;
+    }
+}
+//____________________________________________________________________________
+int my_min ( int num1, int num2){
+    if (num1 < num2){
+        return num1;
+    }else {
+        return num2;
+    }
+}
+//____________________________________________________________________________
+void termination ( void ){
+    int n;
+
+    printf("Enter key to end \n");
+    scanf("%d", &n);
+
+    return ;
+}
+//____________________________________________________________________________
