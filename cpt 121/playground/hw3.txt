@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h> //.header
+//whenever functions in program must be listed up here
+int main(int argc, char *argv[]) ;
+void my_array( void );
+//____________________________________________________________________________
+int main(int argc, char *argv[]) { // must be main in every C program; by using functions this becomes table of contents
+
+
+    my_array();//funcy arrays
+
+    return 0;
+
+}
+//____________________________________________________________________________
+//____________________________________________________________________________
+void my_array( void ){
+    int j;
+    double goob[ 20 ],x;
+    j = 0;
+    printf("thats my array \n"); //array is a collection of variables
+
+    printf("Enter a number for array no. 20:");
+    scanf("%lf", &x);
+    for ( int i = 0; i < 20; i++)
+    {
+        j++;
+        goob[ i ] = ((j)+1)*((j)+1)*((j)+1);
+
+    }
+    goob[ 19 ] = ((x)+1)*((x)+1)*((x)+1);
+    for ( int i = 0; i < 20; i++)
+    {
+
+        printf("%lf \n", goob[ i ]);
+    }
+
+    return;
+}
+//____________________________________________________________________________
+//____________________________________________________________________________

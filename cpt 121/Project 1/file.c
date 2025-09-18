@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) { // must be main in every C program
+    int n;
+    printf("enter the number ");
+    scanf("%d", &n);
+    for (size_t i = 1; i <= n; i++)
+    {
+        printf("%-8d %-8d %-8d \n ", i, i*i,i*i*i);
+    }
+        
+    return 0;
+
+}
